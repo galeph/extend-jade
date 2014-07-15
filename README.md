@@ -7,7 +7,7 @@ Extension for jade, a mixins
 
 ## Use
 
-## Bolierplate
+## [Bolierplate](http://html5boilerplate.com/)
 ```jade
 extend .../templates/html5-bolierplate
 
@@ -40,7 +40,7 @@ Render
 		<meta property="og:title" content="Example" />
 		<meta property="og:type" content="This is a description" />
 		<title>Example!</title>
-		<link rel='stylesheet' href= '//cdnjs.cloudflare.com/ajax/libs/normalize/2.7.0/normalize.min.css'/>
+		<link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/normalize/2.7.0/normalize.min.css'/>
 	</head>
 	<body>
 		<![if IE 5]>
@@ -155,7 +155,7 @@ Render
 <script>window.jQuery || document.write('<script src=http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.min.js><\/script>');</script>
 <script>window.jQuery || document.write('<script src=js/1.js><\/script>');</script>
 <!-- normalize-->
-<link rel='stylesheet', href= '//cdnjs.cloudflare.com/ajax/libs/normalize/1.0.0/normalize.min.css'<
+<link rel='stylesheet', href='//cdnjs.cloudflare.com/ajax/libs/normalize/1.0.0/normalize.min.css'<
 ```
 
 ## Templates
