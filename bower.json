@@ -18,5 +18,9 @@
 	"moduleType": [
 		"node"
 	],
-	"license": "public"
+	"license": "public",
+	"repository": {
+		"type": "git",
+		"url": "git@github.com:galeph/extend-jade.git"
+	}
 }

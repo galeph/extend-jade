@@ -11,7 +11,7 @@
 	],
 	"repository": {
 		"type": "git",
-		"url": "githud.org:galeph/extend-jade.git"
+		"url": "git@github.com:galeph/extend-jade.git"
 	},
 	"scripts": {
 		"test": "node ./test"
