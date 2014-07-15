@@ -38,15 +38,31 @@ Render
 In the JADE
 ```jade
 // meta
-+meta
++MetaBasic()
 // Jquery
-+loadJQuery('1.8', 'js/')
++JQuery('1.8', 'js/')
 // ogp
-+ogp(ogpData)
++DataMeta(JSON-LD, OGP, others)
+//- See http://json-ld.org/
+//- See http://opengraphprotocol.org/
++MetaData({
+      "@context": "http://json-ld.org/contexts/person.jsonld",
+      "@id": "http://dbpedia.org/resource/John_Lennon",
+      "name": "John Lennon",
+      "born": "1940-10-09",
+      "spouse": "http://dbpedia.org/resource/Cynthia_Lennon"
+    },{
+        "title" : "My movie! :)",
+        "type" : "video.movie",
+        "url" : "http://www.imdb.com/title/...",
+        "image" : "http://ia.media-imdb.com/images/..."
+    },{
+        "OtherProperty" : "OtherContent"
+    })
 ```
 Render
 ```html
-<!-- Meta-->
+<!-- MetaBasic-->
 <meta charset="utf-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -56,10 +72,21 @@ Render
 <script>window.jQuery || document.write('<script src=http://code.jquery.com/jquery-1.8.min.js><\/script>');</script>
 <script>window.jQuery || document.write('<script src=http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.min.js><\/script>');</script>
 <script>window.jQuery || document.write('<script src=js/1.js><\/script>');</script>
-<!-- ogp-->
-
+<!-- MetaData-->
+<meta property="og:title" content="My movie! :)" />
+<meta property="og:type" content="video.movie" />
+<meta property="og:url" content="http://www.imdb.com/title/..." />
+<meta property="og:image" content="http://ia.media-imdb.com/images/..." />
+<meta property="OtherProperty" content="OtherContent" />
+<script type="application/ld+json">{
+    "@context": "http://json-ld.org/contexts/person.jsonld",
+    "@id": "http://dbpedia.org/resource/John_Lennon",
+    "name": "John Lennon",
+    "born": "1940-10-09",
+    "spouse": "http://dbpedia.org/resource/Cynthia_Lennon"
+}
+</script>
 ```
-
 ## Templates
 In the JADE
 ```jade
