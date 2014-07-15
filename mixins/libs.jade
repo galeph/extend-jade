@@ -3,7 +3,7 @@ mixin css(pathcss)
 
 mixin normalize(version, pathcss)
 	- var namz = version && !pathcss ? '//cdnjs.cloudflare.com/ajax/libs/normalize/' + version +'/normalize.min.css' : pathcss + '/normalize.css';
-	link(rel='stylesheet', href= namz )
+	+css(namz)
 
 mixin modernizr(version)
 	script(src='//cdnjs.cloudflare.com/ajax/libs/modernizr/#{version}/modernizr.min.js')
@@ -18,3 +18,15 @@ mixin jQuery(version, pathz)
 	each url in jQueryFallbacks
 		script.
 			window.jQuery || document.write('<script src=#{url}><\/script>');
+
+mixin VarInclude (name, ObJson)
+	script(type="text/javascript") var #{name} = #{JSON.stringify(ObJson)};
+
+mixin GoogleAnalytics(UA)
+	script(type="text/javascript").
+		(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+			function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+			e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+			e.src='//www.google-analytics.com/analytics.js';
+			r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+			ga('create',' #{UA}');ga('send','pageview');

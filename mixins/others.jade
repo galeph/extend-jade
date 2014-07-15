@@ -1,33 +1,22 @@
 mixin img-src(src, types)
 	img(alt=atributes.alt, src='data:#{types !! "img/png"};base64,#{src}')
 
-mixin VarInclude (name, ObJson)
-	script(type="text/javascript") var #{name} = #{JSON.stringify(ObJson)};
-
-mixin GoogleAnalytics(UA)
-	script(type="text/javascript").
-		(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-			function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-			e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-			e.src='//www.google-analytics.com/analytics.js';
-			r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-			ga('create',' #{UA}');ga('send','pageview');
 
 //- Writing JS for everything is great and all, but I don't want to see JS
 //- inline in my Jade templates. Thankfully, there are ways of abstrating it
 //- into mixins!
- 
+
 //- Want some Rails-like helpers?
 mixin link_to(href)
 	a(href="#{href || '#'}", class=attributes.class)
 		block
- 
+
 //- How about a single editing point for a class name?
 mixin button(href)
 	- var href = href || "#"
 	a.button(href="#{href}", class=attributes.class)
 		block
- 
+
 //- Iterating over collections to wrap them in an element? Send the tag name and
 //- collection to have it handle the syntax for you
 mixin element_list(el, collection)

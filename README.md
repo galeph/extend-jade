@@ -9,7 +9,7 @@ Extension for jade, a mixins
 
 ## [Bolierplate](http://html5boilerplate.com/)
 ```jade
-extend .../templates/html5-bolierplate
+extend .../layerout/html5-bolierplate
 
 block head
     +Meta(false, { "title" : "Example", "description" : "This is a description" })
