@@ -7,6 +7,61 @@ Extension for jade, a mixins
 
 ## Use
 
+## Bolierplate
+```jade
+extend .../templates/html5-bolierplate
+
+block head
+    +Meta(false, { "title" : "Example", "description" : "This is a description" })
+    title Example!
+
+block stylesheet
+    +normalize('2.7.0')
+    +css('/myStyle.css')
+
+block body
+    +ie-simple(true, 5, false )
+        p Use IE 5
+
+block scripts
+    +modernizr('2.10')
+    +JQuery('1.8', 'js/')
+    +GoogleAnalytics('UA-XXXXXXX')
+```
+Render
+```html
+<!DOCTYPE html>
+<html class="no-js">
+	<head>
+		<meta charset="utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<link rel="shortcut icon" href="favicon.ico"/>
+		<meta property="og:title" content="Example" />
+		<meta property="og:type" content="This is a description" />
+		<title>Example!</title>
+		<link rel='stylesheet' href= '//cdnjs.cloudflare.com/ajax/libs/normalize/2.7.0/normalize.min.css'/>
+	</head>
+	<body>
+		<![if IE 5]>
+			<p>Use IE 5</p>
+		<![endif]>
+		<script src='//cdnjs.cloudflare.com/ajax/libs/modernizr/2.10/modernizr.min.js'></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+		<script>window.jQuery || document.write('<script src=http://code.jquery.com/jquery-1.8.min.js><\/script>');</script>
+		<script>window.jQuery || document.write('<script src=http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.min.js><\/script>');</script>
+		<script>window.jQuery || document.write('<script src=js/1.js><\/script>');</script>
+		<script type="text/javascript">
+		(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+			function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+			e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+			e.src='//www.google-analytics.com/analytics.js';
+			r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+			ga('create','UA-XXXXXXX');ga('send','pageview');
+		</script>
+	</body>
+</html>
+```
 
 ##[Conditionals](http://msdn.microsoft.com/en-us/library/ms537512%28v=vs.85%29.aspx)
 In the JADE
@@ -39,8 +94,8 @@ In the JADE
 ```jade
 // meta
 +MetaBasic()
-// ogp
-+DataMeta(JSON-LD, OGP, others)
+// MetaData
++MetaData(JSON-LD, OGP, others)
 //- See http://json-ld.org/
 //- See http://opengraphprotocol.org/
 +MetaData({
@@ -93,7 +148,7 @@ In the JADE
 Render
 ```html
 <!-- modernizr-->
-<script src='//cdnjs.cloudflare.com/ajax/libs/modernizr/#{version}/modernizr.min.js'></script>
+<script src='//cdnjs.cloudflare.com/ajax/libs/modernizr/2.10/modernizr.min.js'></script>
 <!-- JQuery-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src=http://code.jquery.com/jquery-1.8.min.js><\/script>');</script>
