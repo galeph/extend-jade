@@ -1,0 +1,15 @@
+//- Templates in brower
+
+//-
+	+template( "angular", "me" )
+		.bla Hello {{vaiable}}
+	Name [String]
+
+mixin template( my, name )
+	script( type={ 
+		'angular' : 'text/ng-template', 
+		'knockout' : 'text/html',
+		'ember' : 'text/x-handlebars' }[ my ], 
+		id!=attributes.id || name , 
+		data-template-name!=attributes.id || name )
+		block

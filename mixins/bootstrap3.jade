@@ -1,0 +1,23 @@
+mixin boot_button(type, classes, val)
+	button.btn(type=type, class="btn-" + classes)=val
+
+mixin boot_input(type, classes, name, id, val)
+	if (val && type == "checkbox")
+		input.form-control(type=type, class=classes, name=name, id=id, checked)
+	else if (val)  
+		input.form-control(type=type, class=classes, name=name, id=id, value=val)  
+	else
+		input.form-control(type=type, class=classes, name=name, id=id)  
+
+mixin boot_textarea(name, id, rows, val)
+	textarea.form-control(name=name, id=id, rows="#{rows ? rows : ''}") #{val ? val : ''}
+
+mixin boot_label(id, label)
+	label(for=id)=label
+
+mixin boot_checkbox(name, id, label, checked)
+	+label(id, label)
+	+input("checkbox", "", name, id, checked)
+
+mixin boot_csrf(val)
+	+input("hidden", "", "_csrf", "", val)

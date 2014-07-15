@@ -1,0 +1,22 @@
+//- Conditions HTML IE
+
+//-
+	+ie( 'lte IE 8', true !! false )
+		link(..)
+	Condition [Stirng]
+	Not [Boolean] [Null]
+mixin ie (condition, not)
+	!="<!" + ( not == false || not === '' ?  '' : '--' ) + "[if " + condition + "]>"
+		block
+	!="<![endif]" + ( not == false || not === '' ?  '' : '--' ) + ">"
+
+//-
+	+ie-simple( 'lte', 8, true )
+		link(..)
+	Condition [Stirng] [Boolean]
+	Version [Number] [Null]
+	Not [Boolean] [Null]
+mixin ie-simple (condition, version, not)
+	!="<!" + ( not == false || not === '' ?  '' : '--' )  + "[if "+ (typeof condition == 'boolean' ? condition ? '' : '!' : condition + ' ' ) + "IE " + ( typeof condition == 'string' && !version ? 6 : version || '' ) + "]>"
+		block
+	!="<![endif]" + ( not == false || not === '' ?  '' : '--' ) + ">"

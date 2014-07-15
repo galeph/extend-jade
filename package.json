@@ -1,0 +1,22 @@
+{
+	"name": "extend-jade",
+	"version": "0.1.0",
+	"private": false,
+	"description": "Extend jade",
+	"contributors": [
+		{
+			"name": "Alejandro Next",
+			"email": "alejonext@gmail.com"
+		}
+	],
+	"repository": {
+		"type": "git",
+		"url": "githud.org:galeph/extend-jade.git"
+	},
+	"scripts": {
+		"test": "node ./test"
+	},
+	"dependencies": {
+		"jade": ">=1.3.0"
+	}
+}

@@ -1,0 +1,22 @@
+{
+	"name": "extend-jade",
+	"version": "0.1.0",
+	"dependencies": {
+	},
+	"description": "Extend jade",
+	"main": "packeage.json",
+	"authors": [
+		"alejonext"
+	],
+	"homepage": "http://blog.galeph.com/",
+	"private": true,
+	"ignore": [
+		"**/.*",
+		"node_modules",
+		"bower_components"
+	],
+	"moduleType": [
+		"node"
+	],
+	"license": "public"
+}
