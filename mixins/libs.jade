@@ -1,0 +1,20 @@
+mixin css(pathcss)
+	link(rel='stylesheet', href=pathcss)
+
+mixin normalize(version, pathcss)
+	- var namz = version && !pathcss ? '//cdnjs.cloudflare.com/ajax/libs/normalize/' + version +'/normalize.min.css' : pathcss + '/normalize.css';
+	link(rel='stylesheet', href= namz )
+
+mixin modernizr(version)
+	script(src='//cdnjs.cloudflare.com/ajax/libs/modernizr/#{version}/modernizr.min.js')
+
+mixin jQuery(version, pathz)
+	script(src='https://ajax.googleapis.com/ajax/libs/jquery/#{version}/jquery.min.js')
+	- var jQueryFallbacks = [];
+	- jQueryFallbacks[0] = 'http://code.jquery.com/jquery-' + version + '.min.js';
+	- jQueryFallbacks[1] = 'http://ajax.aspnetcdn.com/ajax/jQuery/jquery-' + version + '.min.js';
+	- jQueryFallbacks[2] = '//cdnjs.cloudflare.com/ajax/libs/jquery/' + version + '/jquery.min.js';
+	- jQueryFallbacks[3] = pathz + (version.charAt(0) === '1'? '1': '') +'.js';
+	each url in jQueryFallbacks
+		script.
+			window.jQuery || document.write('<script src=#{url}><\/script>');

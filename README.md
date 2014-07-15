@@ -39,8 +39,6 @@ In the JADE
 ```jade
 // meta
 +MetaBasic()
-// Jquery
-+JQuery('1.8', 'js/')
 // ogp
 +DataMeta(JSON-LD, OGP, others)
 //- See http://json-ld.org/
@@ -67,11 +65,6 @@ Render
 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <link rel="shortcut icon" href="favicon.ico"/>
-<!-- JQuery-->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src=http://code.jquery.com/jquery-1.8.min.js><\/script>');</script>
-<script>window.jQuery || document.write('<script src=http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.min.js><\/script>');</script>
-<script>window.jQuery || document.write('<script src=js/1.js><\/script>');</script>
 <!-- MetaData-->
 <meta property="og:title" content="My movie! :)" />
 <meta property="og:type" content="video.movie" />
@@ -87,6 +80,29 @@ Render
 }
 </script>
 ```
+## Lib
+In the JADE
+```jade
+// Modernizr
++modernizr('2.10', pathz)
+// Jquery
++JQuery('1.8', 'js/')
+// normalize
++normalize('1.0.0')
+```
+Render
+```html
+<!-- modernizr-->
+<script src='//cdnjs.cloudflare.com/ajax/libs/modernizr/#{version}/modernizr.min.js'></script>
+<!-- JQuery-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src=http://code.jquery.com/jquery-1.8.min.js><\/script>');</script>
+<script>window.jQuery || document.write('<script src=http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.min.js><\/script>');</script>
+<script>window.jQuery || document.write('<script src=js/1.js><\/script>');</script>
+<!-- normalize-->
+<link rel='stylesheet', href= '//cdnjs.cloudflare.com/ajax/libs/normalize/1.0.0/normalize.min.css'<
+```
+
 ## Templates
 In the JADE
 ```jade
