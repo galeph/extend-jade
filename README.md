@@ -4,10 +4,16 @@ Extend Jade
 Extension for jade, a mixins
 
 ## Install
-
+```console
+$ npm install extend-jade
+// OR
+$ bower install extend-jade
+```
 ## Use
 
-## [Bolierplate](http://html5boilerplate.com/)
+### LayersOut
+
+#### [Bolierplate](http://html5boilerplate.com/)
 ```jade
 extend .../layerout/html5-bolierplate
 
@@ -62,8 +68,8 @@ Render
 	</body>
 </html>
 ```
-
-##[Conditionals](http://msdn.microsoft.com/en-us/library/ms537512%28v=vs.85%29.aspx)
+### Mixins
+#### [Conditionals](http://msdn.microsoft.com/en-us/library/ms537512%28v=vs.85%29.aspx)
 In the JADE
 ```jade
 +ie("lte IE 8")
@@ -89,7 +95,7 @@ Render
 <![if gte IE 5]><p>Use IE >5</p><![endif]>
 ```
 
-## Meta
+#### Meta
 In the JADE
 ```jade
 // meta
@@ -135,7 +141,7 @@ Render
 }
 </script>
 ```
-## Lib
+### Lib
 In the JADE
 ```jade
 // Modernizr
@@ -155,10 +161,10 @@ Render
 <script>window.jQuery || document.write('<script src=http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.min.js><\/script>');</script>
 <script>window.jQuery || document.write('<script src=js/1.js><\/script>');</script>
 <!-- normalize-->
-<link rel='stylesheet', href='//cdnjs.cloudflare.com/ajax/libs/normalize/1.0.0/normalize.min.css'<
+<link rel='stylesheet', href='//cdnjs.cloudflare.com/ajax/libs/normalize/1.0.0/normalize.min.css'>
 ```
 
-## Templates
+#### Templates
 In the JADE
 ```jade
 +template('angular')#me
@@ -180,7 +186,7 @@ Render
   <p>Hello ember</p>
 </script>
 ```
-## Lorem Ipsum
+### Lorem Ipsum
 In the JADE
 ```jade
 p
