@@ -1,22 +1,28 @@
 //- Conditions HTML IE
 
-//-
+//- @method ie
+	@param condition {string}
+	@param not {boolean}
+	@return {comment}
+	
 	+ie( 'lte IE 8', true !! false )
 		link(..)
-	Condition [Stirng]
-	Not [Boolean] [Null]
+
 mixin ie (condition, not)
 	!="<!" + ( not == false || not === '' ?  '' : '--' ) + "[if " + condition + "]>"
 		block
 	!="<![endif]" + ( not == false || not === '' ?  '' : '--' ) + ">"
 
-//-
+//- @method ie-simple
+	@param condition {boolean|string}
+	@param version {number|null}
+	@param not {boolean}
+	@return {comment}
+	
 	+ie-simple( 'lte', 8, true )
 		link(..)
-	Condition [Stirng] [Boolean]
-	Version [Number] [Null]
-	Not [Boolean] [Null]
+
 mixin ie-simple (condition, version, not)
-	!="<!" + ( not == false || not === '' ?  '' : '--' )  + "[if "+ (typeof condition == 'boolean' ? condition ? '' : '!' : condition + ' ' ) + "IE " + ( typeof condition == 'string' && !version ? 6 : version || '' ) + "]>"
+	!="<!" + ( not ?  '--' : '' )  + "[if "+ (typeof condition == 'boolean' ? condition ? '' : '!' : condition + ' ' ) + "IE " + ( typeof condition == 'string' && !version ? 6 : version || '' ) + "]>"
 		block
-	!="<![endif]" + ( not == false || not === '' ?  '' : '--' ) + ">"
+	!="<![endif]" + ( not ?  '--' : '' ) + ">"
